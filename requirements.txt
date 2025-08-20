@@ -1,0 +1,26 @@
+# Flask and extensions
+Flask==2.0.1
+Flask-Cors==3.0.10
+Werkzeug==2.0.1
+gunicorn==20.1.0
+
+# HTTP and networking
+#requests==2.26.0
+#aiohttp==3.8.2
+urllib3==1.26.7
+
+# Data handling
+python-dateutil==2.8.2
+jsonschema==4.2.1
+
+# Security
+cryptography==36.0.1
+pyOpenSSL==21.0.0
+
+# Error handling and logging
+sentry-sdk==1.5.1
+
+# Development and testing
+pytest==6.2.5
+black==21.12b0
+flake8==4.0.1
