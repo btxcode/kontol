@@ -7,8 +7,9 @@ import json
 from typing import Dict, List
 from db import get_db_connection
 
-# Global variable for active scans (moved from app.py)
-active_scans = {}
+# Import active_scans from app module
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from app import active_scans
 
 def update_scan_status(scan_id: int, status: str, progress: int = None):
     """Update the status of an active scan."""
@@ -16,10 +17,6 @@ def update_scan_status(scan_id: int, status: str, progress: int = None):
         active_scans[scan_id]['status'] = status
         if progress is not None:
             active_scans[scan_id]['progress'] = progress
-
-def get_active_scans():
-    """Get the active scans dictionary."""
-    return active_scans
 
 def run_command_safely(command_parts: List[str]) -> str:
     """Execute a shell command safely without shell=True."""

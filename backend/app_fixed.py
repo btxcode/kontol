@@ -5,7 +5,7 @@ import time
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from datetime import datetime
-from scanner import run_and_process_scan, get_active_scans
+from scanner import run_and_process_scan
 from config import get_config
 from db import get_db_connection
 
@@ -16,8 +16,8 @@ config = get_config()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Get active scans from scanner module
-active_scans = get_active_scans()
+# Global dictionary to track active scans
+active_scans = {}
 
 # Serve frontend files
 @app.route('/')
